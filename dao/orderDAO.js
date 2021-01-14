@@ -1,8 +1,8 @@
 const AccessDB = require('./accessDB')
 const ProductOrder = require('../models/productOrder')
 const Order = require('../models/order')
-const ProductDAO = require('./productDao')
-const UserDAO = require('./userDao')
+const ProductDAO = require('./productDAO')
+const UserDAO = require('./userDAO')
 
 module.exports = class OrderDAO {
   static async getOrderById (orderId) {
