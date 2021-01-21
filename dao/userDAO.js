@@ -28,22 +28,6 @@ module.exports = class UserDAO {
     return undefined
   }
 
-  static async makeUserAdmin (userId) {
-    const result = await AccessDB.executeSQLStatement(
-      'INSERT INTO "adminuser"(userid) VALUES($1)', userId
-    )
-
-    return result.rowCount === 1
-  }
-
-  static async makeAdminUser (userId) {
-    const result = await AccessDB.executeSQLStatement(
-      'Delete FROM adminuser WHERE adminuser.userid = $1', userId
-    )
-
-    return result.rowCount === 1
-  }
-
   static async isUserAdmin (user) {
     const result = await AccessDB.executeSQLStatement(
       'SELECT * FROM "User" WHERE userid=$1 AND isAdmin=true', user.getId

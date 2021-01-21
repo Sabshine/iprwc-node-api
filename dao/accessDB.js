@@ -16,7 +16,7 @@ module.exports = class AccessDB {
       await connection.connect()
 
       const result = await connection.query(sqlStatement, args)
-      // TODO add logging
+
       connection.end()
 
       return result
@@ -35,8 +35,3 @@ module.exports = class AccessDB {
     })
   }
 }
-
-// Example
-// AccessDB.executeSQLStatement('select * from test').then((result) => {
-//   console.log(result)
-// })
